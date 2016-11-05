@@ -15,7 +15,7 @@ class ColorCell: UICollectionViewCell {
     }
     
     get {
-      return self.colorPanel.backgroundColor ?? UIColor.whiteColor()
+      return self.colorPanel.backgroundColor ?? UIColor.white
     }
   }
   

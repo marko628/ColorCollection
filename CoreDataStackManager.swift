@@ -38,11 +38,11 @@ class CoreDataStackManager {
   
   // MARK: - The Core Data stack. The code has been moved, unaltered, from the AppDelegate.
   
-  lazy var applicationDocumentsDirectory: NSURL = {
+  lazy var applicationDocumentsDirectory: URL = {
     
     print("Instantiating the applicationDocumentsDirectory property")
     
-    let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     return urls[urls.count-1]
   }()
   
@@ -51,8 +51,8 @@ class CoreDataStackManager {
     
     print("Instantiating the managedObjectModel property")
     
-    let modelURL = NSBundle.mainBundle().URLForResource("ColorCollection", withExtension: "momd")!
-    return NSManagedObjectModel(contentsOfURL: modelURL)!
+    let modelURL = Bundle.main.url(forResource: "ColorCollection", withExtension: "momd")!
+    return NSManagedObjectModel(contentsOf: modelURL)!
   }()
   
   /**
@@ -74,14 +74,14 @@ class CoreDataStackManager {
     print("Instantiating the persistentStoreCoordinator property")
     
     var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-    let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent(SQLITE_FILE_NAME)
+    let url = self.applicationDocumentsDirectory.appendingPathComponent(SQLITE_FILE_NAME)
     
-    print("sqlite path: \(url.path!)")
+    print("sqlite path: \(url.path)")
     
     var error: NSError? = nil
     
     do {
-      try coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+      try coordinator!.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
     } catch var error1 as NSError {
       error = error1
       coordinator = nil
