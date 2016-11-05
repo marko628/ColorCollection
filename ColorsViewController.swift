@@ -23,6 +23,17 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
   // works by searchign through the code for 'selectedIndexes'
   var selectedIndexes = [IndexPath]()
   
+  lazy var fetchedResultsController: NSFetchedResultsController<Color> = { () -> NSFetchedResultsController<Color> in
+    
+    let fetchRequest = NSFetchRequest<Color>(entityName: "Color")
+    fetchRequest.sortDescriptors = []
+    
+    let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
+    fetchedResultsController.delegate = self
+    
+    return fetchedResultsController
+  }()
+  
   // Keep the changes. We will keep track of insertions, deletions, and updates.
   var insertedIndexPaths: [IndexPath]!
   var deletedIndexPaths: [IndexPath]!
@@ -81,11 +92,11 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
   
   func configureCell(_ cell: ColorCell, atIndexPath indexPath: IndexPath) {
     print("in configureCell")
-    let color = self.fetchedResultsController.object(at: indexPath) as! Color
+    let color = self.fetchedResultsController.object(at: indexPath) 
     
     cell.color = color.value
-    cell.rgbLabel.text = String(color.value)
-    print(String(color.value))
+    cell.rgbLabel.text = String(describing: color.value)
+    print(String(describing: color.value))
     
     // If the cell is "selected" it's color panel is grayed out
     // we use the Swift `find` function to see if the indexPath is in the array
@@ -143,16 +154,19 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
   
   // MARK: - NSFetchedResultsController
   
-  lazy var fetchedResultsController: NSFetchedResultsController = { () -> <<error type>> in 
-    
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Color")
+  
+  /*
+   lazy var fetchedResultsController: NSFetchedResultsController<Picture> = { () -> NSFetchedResultsController<Picture> in
+    let fetchRequest = NSFetchRequest<Picture>(entityName: Picture.Keys.EntityName)
     fetchRequest.sortDescriptors = []
-    
+    fetchRequest.predicate = NSPredicate(format: "pin == %@", self.pin)
     let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
-    fetchedResultsController.delegate = self
-    
     return fetchedResultsController
-  }()
+   }()
+  */
+  
+  
+
   
   
   // MARK: - Fetched Results Controller Delegate
@@ -258,7 +272,7 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
   
   func deleteAllColors() {
     
-    for color in fetchedResultsController.fetchedObjects as! [Color] {
+    for color in fetchedResultsController.fetchedObjects! {
       sharedContext.delete(color)
     }
   }
@@ -267,7 +281,7 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
     var colorsToDelete = [Color]()
     
     for indexPath in selectedIndexes {
-      colorsToDelete.append(fetchedResultsController.object(at: indexPath) as! Color)
+      colorsToDelete.append(fetchedResultsController.object(at: indexPath) )
     }
     
     for color in colorsToDelete {
