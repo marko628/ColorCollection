@@ -31,7 +31,7 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var bottomButton: UIBarButtonItem!
   
-  var cancelButton: UIBarButtonItem!
+  //var cancelButton: UIBarButtonItem!
   
   var sharedContext = CoreDataStackManager.sharedInstance().managedObjectContext!
   

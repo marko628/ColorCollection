@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gtB-Oc-2aK">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gtB-Oc-2aK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -31,12 +35,12 @@
                         <viewControllerLayoutGuide type="bottom" id="rVH-Jr-jIG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WTR-fn-6Le">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jp7-hf-2ld">
                                 <rect key="frame" x="0.0" y="-53" width="600" height="614"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k33-iu-Lle">
                                     <size key="itemSize" width="168" height="151"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -45,7 +49,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="6lH-ah-ihg" customClass="ColorCell" customModule="ColorCollection" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="168" height="151"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="168" height="151"/>
@@ -57,20 +61,19 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="CsW-NZ-EIq">
                                                             <rect key="frame" x="63" y="65" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="CsW-NZ-EIq" firstAttribute="centerY" secondItem="58b-eY-JvJ" secondAttribute="centerY" id="08E-ZU-H0R"/>
                                                         <constraint firstItem="CsW-NZ-EIq" firstAttribute="centerX" secondItem="58b-eY-JvJ" secondAttribute="centerX" id="HEP-KC-G50"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.33909970238095233" green="0.33909970238095233" blue="0.33909970238095233" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.33909970238095233" green="0.33909970238095233" blue="0.33909970238095233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="58b-eY-JvJ" firstAttribute="height" secondItem="6lH-ah-ihg" secondAttribute="height" id="GOg-YP-9rT"/>
                                             <constraint firstItem="58b-eY-JvJ" firstAttribute="width" secondItem="6lH-ah-ihg" secondAttribute="width" id="ZJg-G3-yxk"/>
@@ -102,7 +105,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Jp7-hf-2ld" firstAttribute="leading" secondItem="WTR-fn-6Le" secondAttribute="leadingMargin" constant="-16" id="3bZ-DH-AIw"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Jp7-hf-2ld" secondAttribute="bottom" id="FHy-7B-UUw"/>
