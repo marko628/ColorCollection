@@ -22,11 +22,7 @@ import MapKit
 
 class ColorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate {
   
-  // The selected indexes array keeps all of the indexPaths for cells that are "selected". The array is
-  // used inside cellForItemAtIndexPath to lower the alpha of selected cells.  You can see how the array
-  // works by searchign through the code for 'selectedIndexes'
-  var selectedIndexes = [IndexPath]()
-  
+  // MARK: - Instance Variables
   lazy var fetchedResultsController: NSFetchedResultsController<Color> = { () -> NSFetchedResultsController<Color> in
     
     let fetchRequest = NSFetchRequest<Color>(entityName: "Color")
@@ -38,18 +34,23 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
     return fetchedResultsController
   }()
   
+  var sharedContext = CoreDataStackManager.sharedInstance().managedObjectContext!
+  
+  // The selected indexes array keeps all of the indexPaths for cells that are "selected". The array is
+  // used inside cellForItemAtIndexPath to lower the alpha of selected cells.  You can see how the array
+  // works by searchign through the code for 'selectedIndexes'
+  var selectedIndexes = [IndexPath]()
+  
   // Keep the changes. We will keep track of insertions, deletions, and updates.
   var insertedIndexPaths: [IndexPath]!
   var deletedIndexPaths: [IndexPath]!
   var updatedIndexPaths: [IndexPath]!
   
+  // MARK: - Outlets
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var bottomButton: UIBarButtonItem!
   
-  //var cancelButton: UIBarButtonItem!
-  
-  var sharedContext = CoreDataStackManager.sharedInstance().managedObjectContext!
-  
+  // MARK: - View Lifecycle Methods
   override func viewDidLoad() {
     print("in viewDidLoad()")
     
@@ -92,11 +93,10 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
   }
   
   
-  // MARK: - Configure Cell
-  
+  // MARK: - UICollectionView
   func configureCell(_ cell: ColorCell, atIndexPath indexPath: IndexPath) {
     print("in configureCell")
-    let color = self.fetchedResultsController.object(at: indexPath) 
+    let color = self.fetchedResultsController.object(at: indexPath)
     
     cell.color = color.value
     cell.rgbLabel.text = String(describing: color.value)
@@ -112,8 +112,6 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
   }
   
-  
-  // MARK: - UICollectionView
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     print("in numberOfSectionsInCollectionView()")
@@ -154,23 +152,6 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
     // And update the buttom button
     updateBottomButton()
   }
-  
-  
-  // MARK: - NSFetchedResultsController
-  
-  
-  /*
-   lazy var fetchedResultsController: NSFetchedResultsController<Picture> = { () -> NSFetchedResultsController<Picture> in
-    let fetchRequest = NSFetchRequest<Picture>(entityName: Picture.Keys.EntityName)
-    fetchRequest.sortDescriptors = []
-    fetchRequest.predicate = NSPredicate(format: "pin == %@", self.pin)
-    let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
-    return fetchedResultsController
-   }()
-  */
-  
-  
-
   
   
   // MARK: - Fetched Results Controller Delegate
