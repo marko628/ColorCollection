@@ -1,6 +1,8 @@
 
 ###The Color Collection
 
+#Note from marko628: this is Udacity's code from the previous version of the iOS Persistence course. I've updated it to Swift 3.
+
 The color collection app demonstrates two techniques that will be importanta for the Virtual Tourist app. 
 
 - Using UICollectionView with NSFetchedResultsController
