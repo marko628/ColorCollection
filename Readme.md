@@ -1,7 +1,7 @@
 
-###The Color Collection
+###Note from marko628: this is Udacity's code from the previous version of the iOS Persistence course. I've updated it to Swift 3.
 
-#Note from marko628: this is Udacity's code from the previous version of the iOS Persistence course. I've updated it to Swift 3.
+###The Color Collection
 
 The color collection app demonstrates two techniques that will be importanta for the Virtual Tourist app. 
 
