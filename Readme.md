@@ -1,5 +1,5 @@
 
-###Note from marko628: this is Udacity's code from the previous version of the iOS Persistence course. I've updated it to Swift 3.
+###Note from marko628: this is Udacity's code from the previous version of the iOS Persistence course. I've updated it to Swift 3. The comments below apply to the original Swift 2 version.
 
 ###The Color Collection
 
@@ -8,7 +8,7 @@ The color collection app demonstrates two techniques that will be importanta for
 - Using UICollectionView with NSFetchedResultsController
 - Maintaining a set of "selected" cells
 
-Take a minute to run the app. It adds cells with randomly generated colors when the `+` button is tapped. When users touch the color cells they are "selected" to be delted. Tapping the "Remove Selected Colors" button deletes the cells that have been selected.
+Take a minute to run the app. It adds cells with randomly generated colors when the `+` button is tapped. When users touch the color cells they are "selected" to be deleted. Tapping the "Remove Selected Colors" button deletes the cells that have been selected.
 
 ##Collections and Fetched Results Controllers. 
 
