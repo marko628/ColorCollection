@@ -1,6 +1,5 @@
 //
 //  CoreDataStackManager.swift
-//  FavoriteActors
 //
 //  Created by Jason on 3/10/15.
 //  Copyright (c) 2015 Udacity. All rights reserved.
@@ -111,7 +110,7 @@ class CoreDataStackManager {
     if coordinator == nil {
       return nil
     }
-    var managedObjectContext = NSManagedObjectContext()
+    var managedObjectContext = NSManagedObjectContext.init(concurrencyType: .mainQueueConcurrencyType)
     managedObjectContext.persistentStoreCoordinator = coordinator
     return managedObjectContext
   }()

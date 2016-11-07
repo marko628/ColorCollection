@@ -17,7 +17,6 @@
 		4D64A4701AD472850069B5B6 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64A46F1AD472850069B5B6 /* ColorCell.swift */; };
 		4D64A4721AD4739C0069B5B6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64A4711AD4739C0069B5B6 /* Color.swift */; };
 		4D64A4741AD476F50069B5B6 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64A4731AD476F50069B5B6 /* CoreDataStackManager.swift */; };
-		4D64A4DA1AD59D030069B5B6 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 4D64A4D91AD59D030069B5B6 /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 		4D64A46F1AD472850069B5B6 /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		4D64A4711AD4739C0069B5B6 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4D64A4731AD476F50069B5B6 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
-		4D64A4D91AD59D030069B5B6 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +85,6 @@
 		4D64A4471AD471B80069B5B6 /* ColorCollection */ = {
 			isa = PBXGroup;
 			children = (
-				4D64A4D91AD59D030069B5B6 /* Readme.md */,
 				4D64A46D1AD471F00069B5B6 /* ColorsViewController.swift */,
 				4D64A46F1AD472850069B5B6 /* ColorCell.swift */,
 				4D64A4711AD4739C0069B5B6 /* Color.swift */,
@@ -232,7 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D64A4DA1AD59D030069B5B6 /* Readme.md in Sources */,
 				4D64A44B1AD471B80069B5B6 /* AppDelegate.swift in Sources */,
 				4D64A4701AD472850069B5B6 /* ColorCell.swift in Sources */,
 				4D64A46E1AD471F00069B5B6 /* ColorsViewController.swift in Sources */,

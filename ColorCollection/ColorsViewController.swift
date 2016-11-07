@@ -1,5 +1,9 @@
 //
 //  ColorViewController.swift
+//  Updated to Swift 3 by Mark on 11/5/16
+//
+//  Created by Jason on 3/10/15.
+//  Copyright (c) 2015 Udacity. All rights reserved.
 //
 
 import Foundation
