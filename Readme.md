@@ -3,7 +3,7 @@
 
 ###The Color Collection
 
-The color collection app demonstrates two techniques that will be importanta for the Virtual Tourist app. 
+The color collection app demonstrates two techniques that will be important for the Virtual Tourist app. 
 
 - Using UICollectionView with NSFetchedResultsController
 - Maintaining a set of "selected" cells
