@@ -55,10 +55,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="168" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58b-eY-JvJ">
+                                                <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58b-eY-JvJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="168" height="151"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="CsW-NZ-EIq">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="CsW-NZ-EIq">
                                                             <rect key="frame" x="63" y="65" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,6 +76,8 @@
                                         <color key="backgroundColor" red="0.33909970238095233" green="0.33909970238095233" blue="0.33909970238095233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="58b-eY-JvJ" firstAttribute="height" secondItem="6lH-ah-ihg" secondAttribute="height" id="GOg-YP-9rT"/>
+                                            <constraint firstItem="58b-eY-JvJ" firstAttribute="leading" secondItem="6lH-ah-ihg" secondAttribute="leading" id="Rff-KK-mSd"/>
+                                            <constraint firstItem="58b-eY-JvJ" firstAttribute="top" secondItem="6lH-ah-ihg" secondAttribute="top" id="Wz1-02-rV2"/>
                                             <constraint firstItem="58b-eY-JvJ" firstAttribute="width" secondItem="6lH-ah-ihg" secondAttribute="width" id="ZJg-G3-yxk"/>
                                         </constraints>
                                         <connections>
@@ -124,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Etn-Ri-fYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="421"/>
+            <point key="canvasLocation" x="649" y="421"/>
         </scene>
     </scenes>
 </document>

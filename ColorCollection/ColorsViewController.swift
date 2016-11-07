@@ -14,7 +14,7 @@ import MapKit
  * The color collection demonstrates two techniques that will be useful in the Virtual Tourist app
  *
  * - Selecting and deselecting cells in a collection
- * - Using NSFecthedResultsController with a collection
+ * - Using NSFetchedResultsController with a collection
  *
  * Before you proceed, take a minute to run the app, and then read the Readme file. It gives a brief introduction to these
  * two topics.
@@ -38,7 +38,7 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
   
   // The selected indexes array keeps all of the indexPaths for cells that are "selected". The array is
   // used inside cellForItemAtIndexPath to lower the alpha of selected cells.  You can see how the array
-  // works by searchign through the code for 'selectedIndexes'
+  // works by searching through the code for 'selectedIndexes'
   var selectedIndexes = [IndexPath]()
   
   // Keep the changes. We will keep track of insertions, deletions, and updates.
@@ -80,8 +80,8 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
     print("in viewDidLayoutSubviews()")
     super.viewDidLayoutSubviews()
     
-    // Lay out the collection view so that cells take up 1/3 of the width,
-    // with no space in between.
+    // Layout the collection view so that cells take up 1/3 of the width,
+    // with no space in-between.
     let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     layout.minimumLineSpacing = 0
@@ -102,7 +102,7 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
     cell.rgbLabel.text = String(describing: color.value)
     print(String(describing: color.value))
     
-    // If the cell is "selected" it's color panel is grayed out
+    // If the cell is "selected", its color panel is grayed out
     // we use the Swift `find` function to see if the indexPath is in the array
     
     if let _ = selectedIndexes.index(of: indexPath) {
@@ -169,7 +169,7 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
   }
   
   // The second method may be called multiple times, once for each Color object that is added, deleted, or changed.
-  // We store the incex paths into the three arrays.
+  // We store the index paths into the three arrays.
   
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
@@ -184,7 +184,7 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
       break
     case .delete:
       print("Delete an item")
-      // Here we are noting that a Color instance has been deleted from Core Data. We keep remember its index path
+      // Here we are noting that a Color instance has been deleted from Core Data. We remember its index path
       // so that we can remove the corresponding cell in "controllerDidChangeContent". The "indexPath" parameter has
       // value that we want in this case.
       deletedIndexPaths.append(indexPath!)
@@ -193,7 +193,7 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
       print("Update an item.")
       // We don't expect Color instances to change after they are created. But Core Data would
       // notify us of changes if any occured. This can be useful if you want to respond to changes
-      // that come about after data is downloaded. For example, when an images is downloaded from
+      // that come about after data is downloaded. For example, when an image is downloaded from
       // Flickr in the Virtual Tourist app
       updatedIndexPaths.append(indexPath!)
       break
@@ -206,7 +206,7 @@ class ColorsViewController: UIViewController, UICollectionViewDataSource, UIColl
   }
   
   
-  // This method is invoked after all of the changed in the current batch have been collected
+  // This method is invoked after all of the changed objects in the current batch have been collected
   // into the three index path arrays (insert, delete, and upate). We now need to loop through the
   // arrays and perform the changes.
   //
