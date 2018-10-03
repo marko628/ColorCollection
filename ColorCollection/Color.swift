@@ -5,6 +5,7 @@
 //  Created by Jason on 4/7/15.
 //  Copyright (c) 2015 Udacity. All rights reserved.
 //
+//  Updated to Swift 4.2 by Mark on 10/3/18
 
 import UIKit
 import CoreData

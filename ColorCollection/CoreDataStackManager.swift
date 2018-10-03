@@ -4,6 +4,8 @@
 //  Created by Jason on 3/10/15.
 //  Copyright (c) 2015 Udacity. All rights reserved.
 //
+//  Updated to Swift 4.2 by Mark on 10/3/18
+//
 
 import Foundation
 import CoreData
@@ -92,7 +94,7 @@ class CoreDataStackManager {
       error = NSError(domain: "Color Collection", code: 9999, userInfo: nil)
       
       // Left in for development development.
-      NSLog("Unresolved error \(error), \(error!.userInfo)")
+      NSLog("Unresolved error \(String(describing: error)), \(error!.userInfo)")
       abort()
     } catch {
       fatalError()
@@ -128,7 +130,7 @@ class CoreDataStackManager {
           try context.save()
         } catch let error1 as NSError {
           error = error1
-          NSLog("Unresolved error \(error), \(error!.userInfo)")
+          NSLog("Unresolved error \(String(describing: error)), \(error!.userInfo)")
           abort()
         }
       }
